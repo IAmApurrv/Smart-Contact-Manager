@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/Base::layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Update Contact</title>
+</head>
+
+<body>
+	<section>
+		<div class="container-fluid justify-content-center col-md-10 offset-md-1">
+
+			<div class="card mt-3">
+
+				<div class="card-body">
+					<div class="text-info">
+						<h1 class="text-center fw-bold">Update
+							Contact</h1>
+					</div>
+
+					<form action="#" th:action="@{/user/processupdate}" class="my-3" th:object="${contact}"
+						enctype="multipart/form-data" method="POST">
+
+						<!-- id -->
+						<input type="hidden" th:value="${contact.cId}" name="cId">
+
+						<!-- name, nickname and dateOfBirth -->
+						<div class="form-group d-flex">
+
+							<div class="input-group w-100 me-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text h-100">
+										<i class="fa fa-user fa-lg text-success"></i>
+									</div>
+								</div>
+								<input required type="text" th:value="${contact.name}" id="firstName" name="name"
+									placeholder="Name" class="form-control" />
+							</div>
+
+							<div class="input-group w-100 ms-1 me-1">
+								<div class="input-group-prepend">
+									<div class="input-group-text h-100">
+										<i class="fa fa-user fa-lg text-success"></i>
+									</div>
+								</div>
+								<input type="text" th:value="${contact.nickname}" id="nickname" name="nickname"
+									placeholder="Nick Name" class="form-control" />
+							</div>
+
+							<div class="input-group w-100 ms-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text h-100">
+										<i class="fas fa-birthday-cake fa-lg text-success"></i>
+									</div>
+								</div>
+								<input type="date" th:value="${contact.dateOfBirth}" id="dateOfBirth" name="dateOfBirth"
+									placeholder="Date of Birth" class="form-control" />
+							</div>
+
+
+						</div>
+
+
+						<!-- nickname -->
+						<!-- <div class="input-group mt-3">
+							<div class="input-group-prepend">
+								<div class="input-group-text h-100">
+									<i class="fa fa-user fa-lg text-success"></i>
+								</div>
+							</div>
+							<input type="text" th:value="${contact.nickname}" id="nickname"
+								name="nickname" placeholder="Nick Name"
+								class="form-control" />
+						</div> -->
+
+
+						<!-- mobile no, email and city -->
+						<div class="form-group d-flex mt-3">
+
+							<div class="input-group w-100 me-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text h-100">
+										<i class="fa fa-phone fa-lg text-success"></i>
+									</div>
+								</div>
+								<input required type="number" th:value="${contact.mobileNo}" id="mobileNo"
+									name="mobileNo" min="10" placeholder="Mobile Number" class="form-control" />
+							</div>
+
+							<div class="input-group w-100 ms-1 me-1">
+								<div class="input-group-prepend">
+									<div class="input-group-text h-100">
+										<i class="fas fa-at fa-lg text-success"></i>
+									</div>
+								</div>
+								<input type="email" th:value="${contact.email}" id="email" name="email"
+									placeholder="Email" class="form-control" />
+							</div>
+
+							<div class="input-group w-100 ms-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text h-100">
+										<i class="fas fa-location-arrow fa-lg text-success"></i>
+									</div>
+								</div>
+								<input type="text" th:value="${contact.city}" id="city" name="city" placeholder="City"
+									class="form-control" />
+							</div>
+
+						</div>
+
+
+						<!-- email -->
+						<!-- <div class="input-group mt-3">
+							<div class="input-group-prepend">
+								<div class="input-group-text fw-bold text-success">@</div>
+							</div>
+							<input type="email" th:value="${contact.email}" id="email"
+								name="email" placeholder="Email" class="form-control" />
+						</div> -->
+
+
+						<!-- relationship and work -->
+						<div class="form-group d-flex mt-3">
+
+							<div class="input-group w-100 me-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text h-100">
+										<i class="fas fa-heart fa-lg text-success"></i>
+									</div>
+								</div>
+								<input type="text" th:value="${contact.relationship}" id="relationship"
+									name="relationship" placeholder="Relation" class="form-control" />
+							</div>
+
+							<div class="input-group w-100 ms-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text h-100">
+										<i class="fa fa-briefcase fa-lg text-success"></i>
+									</div>
+								</div>
+								<input type="text" th:value="${contact.work}" id="work" name="work" placeholder="Work"
+									class="form-control" />
+							</div>
+
+						</div>
+
+
+						<!-- description -->
+						<div class="form-group mt-3">
+							<textarea th:text="${contact.description}" id="mytextarea" name="description"
+								class="form-control" placeholder="Description" rows="3"></textarea>
+						</div>
+
+
+						<!-- image and file input -->
+						<div class="container mt-3">
+							<div class="row align-items-center">
+
+								<!-- file input -->
+								<div class="col-md-3 p-0 me-5">
+									<div class="custom-file">
+										<input type="file" name="profileImage" class="" />
+									</div>
+								</div>
+								<!-- image -->
+								<div class="col-md-2 text-center ms-5">
+									<img src="" th:src="@{'/image/'+${contact.imageURL}}"
+										style="width: 40px; height: 40px;" class="img-fluid profile-pic" alt="" />
+									<p class="text-secondary mb-0">Current pic</p>
+								</div>
+
+							</div>
+						</div>
+
+
+						<!-- submit -->
+						<div class="container text-center">
+							<button class="btn btn-success btn-lg mt-3 w-100">Update
+								Contact</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+		<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+		<script>
+			tinymce.init({
+				selector: '#'
+			});
+		</script>
+
+	</section>
+</body>
+
+</html>

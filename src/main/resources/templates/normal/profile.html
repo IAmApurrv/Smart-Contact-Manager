@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/Base::layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Profile</title>
+</head>
+
+<body>
+	<section>
+		<div class="container-fluid justify-content-center col-md-10 offset-md-1">
+
+			<div class="card mt-3">
+
+				<div class="card-header text-white text-center"
+					style="background-image: linear-gradient(90deg, rgb(160, 222, 219), rgb(3, 165, 209));">
+					<img src="" th:src="@{'/image/'+${user.imageURL}}" th:alt="${user.name}"
+						class="img-fluid rounded-circle mt-2" style="width: 100px;" />
+					<h1 class="fw-bold" th:text="${user.name}"></h1>
+				</div>
+
+				<div class="card-body text-center fw-bold bg-success">
+					<div class="row mb-3">
+						<div class="col-sm-6">USERID</div>
+						<div class="col-sm-6">
+							SCM-USER-<span th:text="${user.id}"></span>
+						</div>
+					</div>
+					<div class="row mb-3">
+						<div class="col-sm-6">Email</div>
+						<div class="col-sm-6">
+							<span th:text="${user.email}"></span>
+						</div>
+					</div>
+					<div class="row mb-3">
+						<div class="col-sm-6">Mobile No</div>
+						<div class="col-sm-6">
+							<span th:text="${user.mobileNo}"></span>
+						</div>
+					</div>
+					<div class="row mb-3">
+						<div class="col-sm-6">Date of Birth</div>
+						<div class="col-sm-6">
+							<span th:text="${user.dateOfBirth}"></span>
+						</div>
+					</div>
+					<div class="row mb-3">
+						<div class="col-sm-6">About you</div>
+						<div class="col-sm-6">
+							<span th:text="${user.about}"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			$(document).ready(() => {
+				$(".item").removeClass("active");
+				$("#profile").addClass("active");
+			});
+		</script>
+
+	</section>
+</body>
+
+</html>

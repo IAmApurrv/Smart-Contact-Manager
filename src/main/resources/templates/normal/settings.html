@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/Base::layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Settings</title>
+</head>
+
+<body>
+	<section>
+		<div class="container-fluid justify-content-center col-md-10 offset-md-1">
+
+			<div class="card mt-3">
+
+				<div class="card-body text-center">
+
+					<form th:action="@{/user/changepassword}" method="post">
+
+						<div class="text-info mb-4">
+							<h1 class="text-center fw-bold">Change Password</h1>
+						</div>
+
+						<!-- old password -->
+						<div class="form-group mb-2">
+							<input type="password" name="currentPassword" class="form-control ip"
+								placeholder="Enter old password" />
+						</div>
+
+						<!-- new password -->
+						<div class="form-group mb-2">
+							<input type="password" name="newPassword" class="form-control ip"
+								placeholder="Enter new password" />
+						</div>
+
+						<div class="row justify-content-center">
+							<button type="submit" class="btn btn-success btn-block m-2"
+								style="width: 45%">Change</button>
+							<button type="reset" class="btn btn-warning btn-block m-2" style="width: 45%">Reset</button>
+						</div>
+					</form>
+
+					<div>
+						<div class="text-secondary mt-4">
+							<h3 class="text-center fw-bold">Do you want to
+								delete your account?</h3>
+							<button th:onclick="|deleteAccount()|" class="btn btn-block btn-danger btn-lg w-100">Delete
+								Account</button>
+						</div>
+						<!-- <form th:action="@{/user/deleteaccount}" method="post"
+							id="deleteAccountForm" class="mb-3">
+							<button type="submit" id="deleteAccountBtn"
+								class="btn btn-danger btn-block btn-lg w-100">Delete
+								Account</button>
+						</form> -->
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+
+		<script>
+			$(document).ready(() => {
+				$(".item").removeClass("active");
+				$("#settings").addClass("active");
+			});
+		</script>
+
+	</section>
+</body>
+
+</html>

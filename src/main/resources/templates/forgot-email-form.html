@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<!-- ~{base::layout(~{::section})} new -->
+<!-- base::layout(~{::section}) old -->
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Forgot Email</title>
+</head>
+
+<body>
+	<section>
+		<div class="container-fluid">
+			<div class="row justify-content-center align-items-center mt-5 pt-5">
+				<div class="col-md-4">
+
+					<div class="card shadow mt-3">
+
+						<div class="card-body p-4">
+							<h3 class="text-center text-info">Enter your Email</h3>
+
+							<!-- message box -->
+							<div th:if="${session.message}" class="container">
+								<div class="alert alert-danger my-2 text-center" role="alert">
+									<span th:text="${session.message}"></span>
+								</div>
+								<th:block th:text="${@sessionHelper.removeMessageFromSession()}"></th:block>
+							</div>
+
+							<!-- <h3 class="text-center text-info">Your registered Email</h3> -->
+
+							<form method="post" action="" th:action="@{/sendotp}" class="form">
+
+								<div class="form-group">
+									<label for="email" class="text-info mb-0">Email</label> <input type="email"
+										name="email" id="email" required="required" class="form-control"
+										placeholder="Enter email here">
+								</div>
+
+								<div class=" mt-3 container d-flex justify-content-center">
+									<button class="btn btn-info text-white w-50 me-2">Send OTP</button>
+									<a href="/login" class="btn btn-warning ms-2">Cancel</a>
+								</div>
+
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>

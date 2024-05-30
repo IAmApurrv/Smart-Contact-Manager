@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Signup Page</title>
+</head>
+
+<body>
+	<section>
+		<div class="container-fluid">
+			<div class="row justify-content-center align-items-center mt-5 pt-5">
+				<div class="col-md-8">
+
+					<div class="card shadow my-3">
+
+						<div class="card-body p-4">
+							<h1 class="text-center text-info">SignUp here</h1>
+
+							<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert"
+								role="alert">
+								<p class="text-center fw-bold" th:text="${session.message.content}"></p>
+								<!-- <th:block th:text="${#session.removeAttribute('message')}"></th:block> -->
+								<th:block th:text="${@sessionHelper.removeMessageFromSession()}"></th:block>
+							</div>
+
+							<form action="" th:action="@{/dosignup}" method="post" enctype="multipart/form-data"
+								th:object="${user}">
+
+								<!-- name, email and mobileNo field -->
+								<div class="form-group d-flex mb-2">
+
+									<div class="w-100 me-2">
+										<label for="name" class="text-info mb-0">Name</label> <input type="text"
+											name="name" class="form-control ip" id="name" placeholder="Enter ur name"
+											required="required" th:value="${user.name}"
+											th:classappend="${#fields.hasErrors('name') ?'is-invalid': ''}">
+									</div>
+
+									<div class="w-100 ms-1 me-1">
+										<label for="email" class="text-info mb-0">Email</label> <input type="email"
+											name="email" class="form-control ip" id="email" placeholder="Enter ur email"
+											required="required" th:value="${user.email}">
+									</div>
+
+									<div class="w-100 ms-2">
+										<label for="mobileNo" class="text-info mb-0">mobile No</label>
+										<input type="text" name="mobileNo" class="form-control ip" id="mobileNo"
+											placeholder="Enter ur mobile number" required="required"
+											th:value="${user.mobileNo}">
+									</div>
+
+								</div>
+
+								<!-- email field -->
+								<!-- <div class="form-group">
+									<label for="email" class="text-info mb-0">Email</label> <input
+										type="email" name="email" class="form-control ip" id="email"
+										placeholder="Enter ur email" required="required"
+										th:value="${user.email}">
+								</div> -->
+
+								<!-- password and date of birth field -->
+								<div class="form-group d-flex mb-2">
+
+									<div class="w-100 me-2">
+										<label for="password" class="text-info mb-0">Password</label>
+										<input type="password" name="password" class="form-control ip" id="password"
+											placeholder="Enter ur password" required="required">
+									</div>
+									<div class="w-100 ms-2">
+										<label for="dateOfBirth" class="text-info mb-0">Date
+											of Birth</label> <input type="date" class="form-control" id="dateOfBirth"
+											th:field="*{dateOfBirth}" required>
+									</div>
+								</div>
+
+								<!-- about field -->
+								<div class="form-group mt-3 mb-2">
+									<textarea name="about" id="" rows="2" class="form-control"
+										placeholder="Tell us about yourself" th:text="${user.about}"></textarea>
+								</div>
+
+								<!-- image -->
+								<div class="form-group mt-3 mb-2 custom-file">
+									<input type="file" name="profileImage" />
+								</div>
+
+								<!-- t&c -->
+								<div class="fomr-group form-check">
+									<input type="checkbox" class="form-check-input" id="agreement" name="agreement"
+										required> <label for="agreement" class="text-info mb-0">Accept terms &
+										conditions.</label>
+								</div>
+
+								<!-- <div class="container text-center">
+								<button type="submit" class="btn bg-success btn-block text-white">Signup</button>
+								<button type="reset" class="btn btn-warning btn-block text-white">Clear</button>
+							</div>
+							
+							<div class="form-group text-center">
+								Already have an account ? <a href="/login" class="btn btn-info text-white btn-md w-100">Log in</a>
+							</div> -->
+
+								<div class="form-group text-center text-info mt-3">
+									<div class="container d-flex justify-content-center">
+										<button type="submit" class="btn btn-success w-50 me-2">Signup</button>
+										<button type="reset" class="btn btn-warning w-50 ms-2">Clear</button>
+									</div>
+									<div class="container mt-2">
+										<i class="me-3">Already have an account ?</i> <a href="/login"
+											class="btn btn-info text-white">Login</a>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>
