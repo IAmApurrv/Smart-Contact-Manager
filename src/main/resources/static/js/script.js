@@ -169,7 +169,7 @@ const paymentStart2 = () => {
 			console.log("Order created successfully:", response);
 			if (response.status == "created") {
 				let options = {
-					key: "rzp_test_KxOMePttMoP5hn",
+					key: "rzp_test_j9cJGo7tAAzXKE",
 					amount: response.amount,
 					currency: "INR",
 					name: "Smart Contact Manager",

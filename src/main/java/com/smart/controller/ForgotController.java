@@ -30,12 +30,13 @@ public class ForgotController {
 
 	@GetMapping("/forgotemailform")
 	public String openEmailForm(Model model) {
-		model.addAttribute("title", "Email Form");
+		model.addAttribute("title", "Forgot Email Form");
 		return "forgot-email-form";
 	}
 
 	@PostMapping("/sendotp")
-	public String sendOTP(@RequestParam("email") String email, HttpSession session) {
+	public String sendOTP(Model model, @RequestParam("email") String email, HttpSession session) {
+		model.addAttribute("title", "Verify OTP");
 		System.out.println("email : " + email);
 
 		int otp = random.nextInt(999999);

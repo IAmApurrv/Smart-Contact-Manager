@@ -144,7 +144,7 @@ public class UserController {
 
 		// current page
 		// contact per page - 4
-		Pageable pageable = PageRequest.of(page, 4);
+		Pageable pageable = PageRequest.of(page, 3);
 
 		Page<Contact> contacts = this.contactRepository.findContactsByUser(user.getId(), pageable);
 
@@ -412,7 +412,7 @@ public class UserController {
 		System.out.println(data);
 		double amount = Integer.parseInt(data.get("amount").toString());
 
-		RazorpayClient client = new RazorpayClient("rzp_test_KxOMePttMoP5hn", "imFP9Z25v1B8rFIy3NbGkleV");
+		RazorpayClient client = new RazorpayClient("rzp_test_j9cJGo7tAAzXKE", "8Au0JtDNskUlQfeukkmKsZhz");
 
 		JSONObject options = new JSONObject();
 		options.put("amount", amount * 100); // amount in paise
