@@ -9,13 +9,13 @@
 <body>
 	<section>
 		<div class="container-fluid">
-			<div class="row justify-content-center align-items-center mt-5 pt-5">
+			<div class="row justify-content-center align-items-center mt-3 pt-5">
 				<div class="col-md-8">
 
 					<div class="card shadow my-3">
 
 						<div class="card-body p-4">
-							<h1 class="text-center text-info">SignUp here</h1>
+							<h1 class="text-center text-info">SignUp</h1>
 
 							<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert"
 								role="alert">
@@ -28,22 +28,22 @@
 								th:object="${user}">
 
 								<!-- name, email and mobileNo field -->
-								<div class="form-group d-flex mb-2">
+								<div class="form-group gap-2 d-flex flex-column flex-sm-column flex-md-row mb-2">
 
-									<div class="w-100 me-2">
+									<div class="w-100">
 										<label for="name" class="text-info mb-0">Name</label> <input type="text"
 											name="name" class="form-control ip" id="name" placeholder="Enter ur name"
 											required="required" th:value="${user.name}"
 											th:classappend="${#fields.hasErrors('name') ?'is-invalid': ''}">
 									</div>
 
-									<div class="w-100 ms-1 me-1">
+									<div class="w-100">
 										<label for="email" class="text-info mb-0">Email</label> <input type="email"
 											name="email" class="form-control ip" id="email" placeholder="Enter ur email"
 											required="required" th:value="${user.email}">
 									</div>
 
-									<div class="w-100 ms-2">
+									<div class="w-100">
 										<label for="mobileNo" class="text-info mb-0">mobile No</label>
 										<input type="text" name="mobileNo" class="form-control ip" id="mobileNo"
 											placeholder="Enter ur mobile number" required="required"
@@ -61,14 +61,14 @@
 								</div> -->
 
 								<!-- password and date of birth field -->
-								<div class="form-group d-flex mb-2">
+								<div class="form-group gap-2 d-flex flex-column flex-sm-column flex-md-row mb-2">
 
-									<div class="w-100 me-2">
+									<div class="w-100">
 										<label for="password" class="text-info mb-0">Password</label>
 										<input type="password" name="password" class="form-control ip" id="password"
 											placeholder="Enter ur password" required="required">
 									</div>
-									<div class="w-100 ms-2">
+									<div class="w-100">
 										<label for="dateOfBirth" class="text-info mb-0">Date
 											of Birth</label> <input type="date" class="form-control" id="dateOfBirth"
 											th:field="*{dateOfBirth}" required>

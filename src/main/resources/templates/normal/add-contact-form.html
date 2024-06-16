@@ -11,7 +11,7 @@
 	<section>
 		<div class="container-fluid justify-content-center col-md-10 offset-md-1">
 
-			<div class="card mt-3">
+			<div class="card mt-2">
 
 				<div class="card-body">
 					<div class="text-info">
@@ -23,9 +23,9 @@
 						th:object="${contact}" enctype="multipart/form-data">
 
 						<!-- name, nickname and dateOfBirth -->
-						<div class="form-group d-flex">
+						<div class="form-group gap-2 d-flex flex-column flex-sm-column flex-md-row">
 
-							<div class="input-group w-100 me-2">
+							<div class="input-group w-100">
 								<div class="input-group-prepend">
 									<div class="input-group-text h-100">
 										<i class="fa fa-user fa-lg text-success"></i>
@@ -35,7 +35,7 @@
 									class="form-control" />
 							</div>
 
-							<div class="input-group w-100 ms-1 me-1">
+							<div class="input-group w-100">
 								<div class="input-group-prepend">
 									<div class="input-group-text h-100">
 										<i class="fa fa-user fa-lg text-success"></i>
@@ -45,7 +45,7 @@
 									class="form-control" />
 							</div>
 
-							<div class="input-group w-100 ms-2">
+							<div class="input-group w-100">
 								<div class="input-group-prepend">
 									<div class="input-group-text h-100">
 										<i class="fas fa-birthday-cake fa-lg text-success"></i>
@@ -71,9 +71,9 @@
 
 
 						<!-- mobile no, email and city -->
-						<div class="form-group d-flex mt-3">
+						<div class="form-group gap-2 d-flex flex-column flex-sm-column flex-md-row mt-3">
 
-							<div class="input-group w-100 me-2">
+							<div class="input-group w-100">
 								<div class="input-group-prepend">
 									<div class="input-group-text h-100">
 										<i class="fa fa-phone fa-lg text-success"></i>
@@ -83,7 +83,7 @@
 									placeholder="Mobile Number" class="form-control" />
 							</div>
 
-							<div class="input-group w-100 ms-1 me-1">
+							<div class="input-group w-100">
 								<div class="input-group-prepend">
 									<div class="input-group-text h-100">
 										<i class="fas fa-at fa-lg text-success"></i>
@@ -92,7 +92,7 @@
 								<input type="email" id="email" name="email" placeholder="Email" class="form-control" />
 							</div>
 
-							<div class="input-group w-100 ms-2">
+							<div class="input-group w-100">
 								<div class="input-group-prepend">
 									<div class="input-group-text h-100">
 										<i class="fas fa-location-arrow fa-lg text-success"></i>
@@ -115,9 +115,9 @@
 
 
 						<!-- relationship and work -->
-						<div class="form-group d-flex mt-3">
+						<div class="form-group gap-2 d-flex flex-column flex-sm-column flex-md-row mt-3">
 
-							<div class="input-group w-100 me-2">
+							<div class="input-group w-100">
 								<div class="input-group-prepend">
 									<div class="input-group-text h-100">
 										<i class="fas fa-heart fa-lg text-success"></i>
@@ -127,7 +127,7 @@
 									class="form-control" />
 							</div>
 
-							<div class="input-group w-100 ms-2">
+							<div class="input-group w-100">
 								<div class="input-group-prepend">
 									<div class="input-group-text h-100">
 										<i class="fa fa-briefcase fa-lg text-success"></i>
@@ -147,14 +147,14 @@
 
 
 						<!-- image -->
-						<div class="form-group custom-file mt-3">
+						<div class="form-group custom-file">
 							<input type="file" name="profileImage" />
 						</div>
 
 
 						<!-- submit -->
 						<div class="container text-center">
-							<button class="btn btn-success btn-lg mt-3 w-100">Save
+							<button class="btn btn-success btn-lg mt-2 w-100">Save
 								Contact</button>
 						</div>
 					</form>

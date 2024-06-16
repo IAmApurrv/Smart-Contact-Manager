@@ -8,57 +8,57 @@
 
 <body>
 	<section>
-		<div class="container-fluid justify-content-center col-md-10 offset-md-1">
+		<div class="container-fluid col-md-10 offset-md-1">
 
 			<div class="card mt-3" th:if=${contact}>
 
-				<div class="card-header text-white text-center"
-					style="background-image: linear-gradient(90deg, rgb(160, 222, 219), rgb(3, 165, 209));">
-					<img src="" th:src="@{'/image/'+${contact.imageURL}}" class="img-fluid rounded-circle mt-2"
-						style="width: 70px;" alt="" />
-					<h1 class="fw-bold" th:text="${contact.name}"></h1>
+				<div class="card-header d-flex justify-content-center align-items-center gap-3" style="background-image: linear-gradient(90deg, rgb(160, 222, 219), rgb(3, 165, 209));">
+					<img src="" th:src="@{'/image/'+${contact.imageURL}}" class="border img-fluid rounded-circle mt-2"
+						style="width: 120px; height: 120px;" alt="" />
+
+					<h1 class="text-white text-center fw-bold font-monospace" th:text="${contact.name}"></h1>
 				</div>
 
 				<div class="card-body text-center fw-bold bg-success">
 					<div class="row mb-2">
-						<div class="col-sm-6">Nickname</div>
-						<div class="col-sm-6">
+						<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">Nickname</div>
+						<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
 							<span th:text="${contact.nickname}"></span>
 						</div>
 					</div>
 					<div class="row mb-2">
-						<div class="col-sm-6">Email</div>
-						<div class="col-sm-6">
+						<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">Email</div>
+						<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
 							<span th:text="${contact.email}"></span>
 						</div>
 					</div>
 					<div class="row mb-2">
-						<div class="col-sm-6">Mobile No</div>
-						<div class="col-sm-6">
+						<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">Mobile No</div>
+						<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
 							<span th:text="${contact.mobileNo}"></span>
 						</div>
 					</div>
 					<div class="row mb-2">
-						<div class="col-sm-6">Date of Birth</div>
-						<div class="col-sm-6">
+						<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">Date of Birth</div>
+						<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
 							<span th:text="${contact.dateOfBirth}"></span>
 						</div>
 					</div>
 					<div class="row mb-2">
-						<div class="col-sm-6">City</div>
-						<div class="col-sm-6">
+						<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">City</div>
+						<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
 							<span th:text="${contact.city}"></span>
 						</div>
 					</div>
 					<div class="row mb-2">
-						<div class="col-sm-6">Relation</div>
-						<div class="col-sm-6">
+						<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">Relation</div>
+						<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
 							<span th:text="${contact.relationship}"></span>
 						</div>
 					</div>
 					<div class="row mb-2">
-						<div class="col-sm-6">Work</div>
-						<div class="col-sm-6">
+						<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">Work</div>
+						<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
 							<span th:text="${contact.work}"></span>
 						</div>
 					</div>
@@ -68,18 +68,18 @@
 
 
 					<div class="row mt-3">
-						<div class="col-md-4">
+						<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
 							<button th:onclick="|deleteContact(${contact.cId})|"
 								class="btn btn-block btn-danger btn-lg w-100">Delete</button>
 							<!-- btn-block is no longer works in version 4.x.x -> use w-100 -->
 						</div>
-						<div class="col-md-4">
+						<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
 							<form method="post" th:action="@{'/user/updatecontact/'+${contact.cId}}" class="">
-								<button type="submit" class="btn btn-warning btn-lg w-100">Update</button>
+								<button type="submit" class="btn btn-warning btn-lg w-100 h-100">Update</button>
 							</form>
 						</div>
-						<div class="col-md-4">
-							<a th:href="@{/user/showcontacts/0}" class="btn btn-secondary btn-lg w-100">Back</a>
+						<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+							<a th:href="@{/user/showcontacts/0}" class="btn btn-secondary btn-lg w-100 h-100">Back</a>
 						</div>
 					</div>
 				</div>

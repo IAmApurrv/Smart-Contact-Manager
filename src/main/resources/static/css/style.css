@@ -38,6 +38,8 @@ td {
 @media only screen and (max-width: 600px) {
 	.sidebar {
 		display: none;
+		background-color: #0dcaf0;
+		margin-top: 8px;
 		width: 80% !important;
 		height: 100vh;
 		position: fixed;

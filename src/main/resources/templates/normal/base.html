@@ -81,28 +81,28 @@
 
 			<ul class="navbar-nav ms-auto capitalized fw-bold me-2">
 				<li class="nav-item">
-					<a th:href="@{/user/dashboard}" href="#" class="nav-link text-white position-relative"
+					<a th:href="@{/user/dashboard}" href="#" class="mx-2 nav-link text-white position-relative"
 						onmouseover="this.style.transform='scale(1.10)';" onmouseout="this.style.transform='scale(1)';">
 						Dashboard<span class="sr-only"></span>
 					</a>
 				</li>
 
 				<li class="nav-item">
-					<a th:href="@{/user/profile}" href="#" class="nav-link text-white position-relative"
+					<a th:href="@{/user/profile}" href="#" class="mx-2 nav-link text-white position-relative"
 						onmouseover="this.style.transform='scale(1.10)';" onmouseout="this.style.transform='scale(1)';">
-						Profile - <span th:text="${user.name}"></span>
+						Profile - <i><span class="" th:text="${user.name}"></span></i>
 					</a>
 				</li>
 
 				<li class="nav-item"><a th:href="@{/user/sendmessage}" href="#"
-						class="nav-link text-white position-relative" onmouseover="this.style.transform='scale(1.10)';"
+						class="mx-2 nav-link text-white position-relative" onmouseover="this.style.transform='scale(1.10)';"
 						onmouseout="this.style.transform='scale(1)';">
 						Feedback<span class="sr-only"></span>
 					</a>
 				</li>
 
 				<li class="nav-item">
-					<a th:href="@{/logout}" href="#" class="nav-link text-white position-relative"
+					<a th:href="@{/logout}" href="#" class="mx-2 nav-link text-white position-relative"
 						onmouseover="this.style.transform='scale(1.10)';" onmouseout="this.style.transform='scale(1)';">
 						Logout
 					</a>
@@ -147,14 +147,14 @@
 		<a href="#" th:href="@{@{/user/sendmessage}}" id="feedback"
 			class="ps-4 py-2 w-100 d-block text-decoration-none text-secondary item"
 			onmouseover="this.style.background='#e2e2e2'" onmouseout="this.style.background='inherit'">
-			<i class="fas fa-question-circle fa-lg me-3"></i> Feedback
+			<i class="fas fa-comment fa-lg me-3"></i> Feedback
 		</a>
 		<a href="#" th:href="@{/logout}" class="ps-4 py-2 w-100 d-block text-decoration-none text-secondary item"
 			onmouseover="this.style.background='#e2e2e2'" onmouseout="this.style.background='inherit'">
 			<i class="fas fa-sign-out-alt fa-lg me-3"></i> Logout
 		</a>
 
-		<div class="w-100 mt-2" style="height: 1px; background: #e2e2e2;"></div>
+		<div class="w-100 mt-2 display-none" style="height: 1px; background: #e2e2e2;"></div>
 
 	</div>
 	<!-- sidebar end -->

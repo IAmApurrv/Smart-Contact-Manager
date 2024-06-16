@@ -10,7 +10,7 @@
 	<section>
 		<div class="container-fluid justify-content-center col-md-10 offset-md-1">
 
-			<div class="card mt-3">
+			<div class="card mt-2">
 
 				<div class="card-body">
 					<div class="text-info">
@@ -25,9 +25,9 @@
 						<input type="hidden" th:value="${contact.cId}" name="cId">
 
 						<!-- name, nickname and dateOfBirth -->
-						<div class="form-group d-flex">
+						<div class="form-group gap-2 d-flex flex-column flex-sm-column flex-md-row">
 
-							<div class="input-group w-100 me-2">
+							<div class="input-group w-100">
 								<div class="input-group-prepend">
 									<div class="input-group-text h-100">
 										<i class="fa fa-user fa-lg text-success"></i>
@@ -37,7 +37,7 @@
 									placeholder="Name" class="form-control" />
 							</div>
 
-							<div class="input-group w-100 ms-1 me-1">
+							<div class="input-group w-100">
 								<div class="input-group-prepend">
 									<div class="input-group-text h-100">
 										<i class="fa fa-user fa-lg text-success"></i>
@@ -47,7 +47,7 @@
 									placeholder="Nick Name" class="form-control" />
 							</div>
 
-							<div class="input-group w-100 ms-2">
+							<div class="input-group w-100">
 								<div class="input-group-prepend">
 									<div class="input-group-text h-100">
 										<i class="fas fa-birthday-cake fa-lg text-success"></i>
@@ -75,9 +75,9 @@
 
 
 						<!-- mobile no, email and city -->
-						<div class="form-group d-flex mt-3">
+						<div class="form-group gap-2 d-flex flex-column flex-sm-column flex-md-row mt-3">
 
-							<div class="input-group w-100 me-2">
+							<div class="input-group w-100">
 								<div class="input-group-prepend">
 									<div class="input-group-text h-100">
 										<i class="fa fa-phone fa-lg text-success"></i>
@@ -87,7 +87,7 @@
 									name="mobileNo" min="10" placeholder="Mobile Number" class="form-control" />
 							</div>
 
-							<div class="input-group w-100 ms-1 me-1">
+							<div class="input-group w-100">
 								<div class="input-group-prepend">
 									<div class="input-group-text h-100">
 										<i class="fas fa-at fa-lg text-success"></i>
@@ -97,7 +97,7 @@
 									placeholder="Email" class="form-control" />
 							</div>
 
-							<div class="input-group w-100 ms-2">
+							<div class="input-group w-100">
 								<div class="input-group-prepend">
 									<div class="input-group-text h-100">
 										<i class="fas fa-location-arrow fa-lg text-success"></i>
@@ -121,9 +121,9 @@
 
 
 						<!-- relationship and work -->
-						<div class="form-group d-flex mt-3">
+						<div class="form-group gap-2 d-flex flex-column flex-sm-column flex-md-row mt-3">
 
-							<div class="input-group w-100 me-2">
+							<div class="input-group w-100">
 								<div class="input-group-prepend">
 									<div class="input-group-text h-100">
 										<i class="fas fa-heart fa-lg text-success"></i>
@@ -133,7 +133,7 @@
 									name="relationship" placeholder="Relation" class="form-control" />
 							</div>
 
-							<div class="input-group w-100 ms-2">
+							<div class="input-group w-100">
 								<div class="input-group-prepend">
 									<div class="input-group-text h-100">
 										<i class="fa fa-briefcase fa-lg text-success"></i>
@@ -154,7 +154,7 @@
 
 
 						<!-- image and file input -->
-						<div class="container mt-3">
+						<div class="">
 							<div class="row align-items-center">
 
 								<!-- file input -->
@@ -164,7 +164,7 @@
 									</div>
 								</div>
 								<!-- image -->
-								<div class="col-md-2 text-center ms-5">
+								<div class="col-md-2 text-center">
 									<img src="" th:src="@{'/image/'+${contact.imageURL}}"
 										style="width: 40px; height: 40px;" class="img-fluid profile-pic" alt="" />
 									<p class="text-secondary mb-0">Current pic</p>
@@ -176,7 +176,7 @@
 
 						<!-- submit -->
 						<div class="container text-center">
-							<button class="btn btn-success btn-lg mt-3 w-100">Update
+							<button class="btn btn-success btn-lg mt-2 w-100">Update
 								Contact</button>
 						</div>
 					</form>
