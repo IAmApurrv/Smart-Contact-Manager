@@ -44,7 +44,7 @@
 				console.log("Amount : ", amount);
 
 				if (amount == "" || amount == null) {
-					swal("Failed !!", "Amount is required !!", "error");
+					swal("Failed !", "Amount is required !", "error");
 					return;
 				}
 
@@ -67,8 +67,8 @@
 								order_id: response.id,
 								handler: function (response) {
 									console.log("Payment successful:", response);
-									swal("Congrats !", "Payment successful !!", "success", {
-										button: "Done !",
+									swal("Congrats !", "Payment successful !", "success", {
+										button: "Back To Dashboard !",
 									});
 									$("#payment-field").val('');
 								},
@@ -94,8 +94,8 @@
 							var rzp = new Razorpay(options);
 							rzp.on('payment.failed', function (response) {
 								console.log("Payment failed:", response);
-								swal("Failed !", "Oops payment failed !!", "error", {
-									button: "Done !",
+								swal("Failed !", "Oops payment failed !", "error", {
+									button: "Back To Dashboard",
 								});
 							});
 
@@ -104,7 +104,10 @@
 					},
 					"error": function (error) {
 						console.log("Error creating order:", error);
-						alert("Something went wrong !!");
+						swal("Failed !", "Check your internet connection !", "error", {
+							button: "Back To Dashboard",
+						});
+						alert("Check your internet connection !")
 					}
 				});
 			}

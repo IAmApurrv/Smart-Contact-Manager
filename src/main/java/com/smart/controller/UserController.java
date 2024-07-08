@@ -33,11 +33,9 @@ import com.razorpay.Order;
 import com.razorpay.RazorpayClient;
 import com.smart.dao.ContactRepository;
 import com.smart.dao.FeedbackRepository;
-// import com.smart.dao.MyOrderRepository;
 import com.smart.dao.UserRepository;
 import com.smart.entities.Contact;
 import com.smart.entities.Feedback;
-// import com.smart.entities.MyOrder;
 import com.smart.entities.User;
 import com.smart.helper.Message;
 
@@ -57,8 +55,6 @@ public class UserController {
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	@Autowired
 	private FeedbackRepository feedbackRepository;
-	// @Autowired
-	// private MyOrderRepository myOrderRepository;
 
 	@ModelAttribute // used to send common data top all jsp pages
 	public void addCommonData(Model model, Principal principal) {
@@ -304,12 +300,6 @@ public class UserController {
 				this.feedbackRepository.delete(feedback);
 			}
 
-			// Delete user's orders
-			// List<MyOrder> userOrders = this.myOrderRepository.findByUser(user);
-			// for (MyOrder order : userOrders) {
-			// this.myOrderRepository.delete(order);
-			// }
-
 			// Delete the user
 			this.userRepository.delete(user);
 
@@ -354,56 +344,6 @@ public class UserController {
 		// return "normal/feedback";
 		return "redirect:/user/dashboard";
 	}
-
-	// @PostMapping("/createOrder")
-	// @ResponseBody
-	// public String createOrder(@RequestBody Map<String, Object> data, Principal
-	// principal) throws Exception {
-	// System.out.println(data);
-	//
-	// int amount = Integer.parseInt(data.get("amount").toString());
-	//
-	// var client = new RazorpayClient("rzp_test_KxOMePttMoP5hn",
-	// "imFP9Z25v1B8rFIy3NbGkleV");
-	//
-	// JSONObject jsonObject = new JSONObject();
-	// jsonObject.put("amount", amount * 100); // amount in paise
-	// jsonObject.put("currency", "INR");
-	// jsonObject.put("receipt", "txn_235425");
-	//
-	// Order order = client.orders.create(jsonObject);
-	// System.out.println(order);
-	//
-	// // Save order details to the database or perform other actions
-	//// System.out.println("a");
-	// MyOrder myOrder = new MyOrder();
-	// myOrder.setAmount(order.get("amount") + "");
-	// myOrder.setOrderId(order.get("id"));
-	// myOrder.setPaymentId(null);
-	// myOrder.setStatus("created");
-	// myOrder.setUser(this.userRepository.getUserByUserName(principal.getName()));
-	// myOrder.setReceipt(order.get("receipt"));
-	//
-	// this.myOrderRepository.save(myOrder);
-	//
-	// return order.toString();
-	//
-	//// return "done";
-	// }
-	//
-	// @PostMapping("/updateOrder")
-	// public ResponseEntity<?> updateOrder(@RequestBody Map<String, Object> data) {
-	// MyOrder myOrder =
-	// this.myOrderRepository.findByOrderId(data.get("order_id").toString());
-	//
-	// myOrder.setPaymentId(data.get("payment_id").toString());
-	// myOrder.setStatus(data.get("status").toString());
-	// this.myOrderRepository.save(myOrder);
-	//
-	// System.out.println(data);
-	//
-	// return ResponseEntity.ok(Map.of("msg", "updated"));
-	// }
 
 	// Create order for payment
 	@PostMapping("/create-order")

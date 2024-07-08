@@ -216,7 +216,7 @@ const paymentStart2 = () => {
     },
     error: function (error) {
       console.log("Error creating order:", error);
-      alert("Something went wrong !!");
+      // alert("Something went wrong !!");
     },
   });
 };

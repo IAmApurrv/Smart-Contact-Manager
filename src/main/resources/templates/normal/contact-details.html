@@ -12,8 +12,9 @@
 
 			<div class="card mt-3" th:if=${contact}>
 
-				<div class="card-header d-flex justify-content-center align-items-center gap-3" style="background-image: linear-gradient(90deg, rgb(160, 222, 219), rgb(3, 165, 209));">
-					<img src="" th:src="@{'/image/'+${contact.imageURL}}" class="border img-fluid rounded-circle mt-2"
+				<div class="card-header d-flex justify-content-center align-items-center gap-3"
+					style="background-image: linear-gradient(90deg, rgb(160, 222, 219), rgb(3, 165, 209));">
+					<img src="" th:src="@{'/image/'+${contact.imageURL}}" class="img-fluid rounded-circle mt-2"
 						style="width: 120px; height: 120px;" alt="" />
 
 					<h1 class="text-white text-center fw-bold font-monospace" th:text="${contact.name}"></h1>
