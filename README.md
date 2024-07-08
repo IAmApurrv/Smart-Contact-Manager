@@ -71,8 +71,8 @@ Smart Contact Manager is a Spring Boot-based application designed to efficiently
 ### Home
 ![Home](https://github.com/IAmApurrv/Smart-Contact-Manager/blob/main/Screenshots/Home.png?raw=true)
 
-### Sign-up
-![Sign-up](https://github.com/IAmApurrv/Smart-Contact-Manager/blob/main/Screenshots/Sign-up.png?raw=true)
+### Sign-Up
+![Sign-up](https://github.com/IAmApurrv/Smart-Contact-Manager/blob/main/Screenshots/Sign-Up.png?raw=true)
 
 ### Login
 ![Login](https://github.com/IAmApurrv/Smart-Contact-Manager/blob/main/Screenshots/Login.png?raw=true)
@@ -109,3 +109,6 @@ Smart Contact Manager is a Spring Boot-based application designed to efficiently
 
 ### Payment
 ![Payment](https://github.com/IAmApurrv/Smart-Contact-Manager/blob/main/Screenshots/Payment.png?raw=true)
+
+### About
+![About](https://github.com/IAmApurrv/Smart-Contact-Manager/blob/main/Screenshots/About.png?raw=true)
