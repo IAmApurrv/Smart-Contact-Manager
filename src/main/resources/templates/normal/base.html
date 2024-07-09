@@ -147,7 +147,7 @@
 		<a href="#" th:href="@{@{/user/sendmessage}}" id="feedback"
 			class="ps-4 py-2 w-100 d-block text-decoration-none text-secondary item"
 			onmouseover="this.style.background='#e2e2e2'" onmouseout="this.style.background='inherit'">
-			<i class="fas fa-comment fa-lg me-3"></i> Feedback
+			<i class="far fa-comment fa-lg me-3"></i> Feedback
 		</a>
 		<a href="#" th:href="@{/logout}" class="ps-4 py-2 w-100 d-block text-decoration-none text-secondary item"
 			onmouseover="this.style.background='#e2e2e2'" onmouseout="this.style.background='inherit'">
@@ -167,9 +167,9 @@
 		<i onclick="toggleSidebar()" class="fas fa-bars mt-3 ms-1 barsBtn" style="cursor: pointer;"></i>
 
 		<!-- message box -->
-		<div th:if="${session.message}" class="container">
-			<div th:classappend="${'alert-'+session.message.type}" class="alert text-center" role="alert">
-				<span th:text="${session.message.content}"></span>
+		<div th:if="${session.message}" class="container col-md-10">
+			<div th:classappend="${session.message.type}" class="alert text-center" role="alert">
+				<span class="fst-italic fw-bold font-monospace" th:text="${session.message.content}"></span>
 			</div>
 			<th:block th:text="${@sessionHelper.removeMessageFromSession()}"></th:block>
 		</div>

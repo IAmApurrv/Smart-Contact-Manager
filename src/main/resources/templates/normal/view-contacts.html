@@ -13,7 +13,7 @@
 
 			<div class="card mt-3">
 
-				<div class="card-body">
+				<div class="card-body pb-1">
 					<div class="text-info">
 						<h1 class="text-center fw-bold">Your Contacts</h1>
 					</div>
@@ -41,7 +41,7 @@
 								</tr>
 							</thead>
 
-							<tbody>
+							<tbody class="">
 								<tr class="" th:each="c : ${contacts}">
 
 									<th scope="row">
@@ -65,16 +65,20 @@
 									<td th:text="${c.mobileNo}"></td>
 
 									<td class="">
+										<div class="d-flex gap-3">
 										<!-- <a href="#" th:href="@{'/user/delete/' + ${c.cId}}"
 										class="btn btn-danger btn-sm">Delete</a> -->
 										<a href="#" th:onclick="|deleteContact(${c.cId})|"
-											class="btn btn-danger btn-sm w-100"><i class="fas fa-trash-alt"></i></a>
+											class="btn btn-danger btn-sm w-100 h-100">
+											<i class="fas fa-trash-alt"></i>
+										</a>
 
-										<form method="post" th:action="@{'/user/updatecontact/'+${c.cId}}" class="mt-2">
-											<button type="submit" class="btn btn-warning btn-sm w-100">
+										<form method="post" th:action="@{'/user/updatecontact/'+${c.cId}}" class="w-100 h-100">
+											<button type="submit" class="btn btn-warning btn-sm w-100 h-100">
 												<i class="fas fa-edit"></i>
 											</button>
 										</form>
+									</div>
 									</td>
 								</tr>
 							</tbody>
@@ -84,7 +88,7 @@
 
 					<!-- pagination part -->
 					<nav aria-label="Page navigation example">
-						<ul class="pagination">
+						<ul class="pagination mt-2">
 							<li th:if="${currentPage != 0}" class="page-item"><a
 									th:href="@{'/user/showcontacts/'+${currentPage - 1}}" class="page-link"
 									href="#">Previous</a></li>

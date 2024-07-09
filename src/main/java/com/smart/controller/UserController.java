@@ -117,13 +117,13 @@ public class UserController {
 			System.out.println("Successfully added to database");
 
 			// success message
-			session.setAttribute("message", new Message("Your contact is successfully added. Add more...", "success"));
+			session.setAttribute("message", new Message("Your contact is successfully added. Add more...", "alert-success"));
 		} catch (Exception e) {
 			System.out.println("Error " + e.getMessage());
 			e.printStackTrace();
 
 			// error message
-			session.setAttribute("message", new Message("Something went wrong. Try again...", "danger"));
+			session.setAttribute("message", new Message("Something went wrong. Try again...", "alert-danger"));
 		}
 
 		// return "normal/add-contact-form";
@@ -189,7 +189,7 @@ public class UserController {
 			System.out.println("contact deleted.");
 		}
 
-		session.setAttribute("message", new Message("Contact deleted succesfully", "success"));
+		session.setAttribute("message", new Message("Contact deleted succesfully", "alert-success"));
 
 		return "redirect:/user/showcontacts/0";
 	}
@@ -235,7 +235,7 @@ public class UserController {
 
 			this.contactRepository.save(contact);
 
-			session.setAttribute("message", new Message("Your contact is updated.", "success"));
+			session.setAttribute("message", new Message("Your contact is updated.", "alert-success"));
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -274,10 +274,10 @@ public class UserController {
 			// change the password
 			currentUser.setPassword(this.bCryptPasswordEncoder.encode(newPassword));
 			this.userRepository.save(currentUser);
-			session.setAttribute("message", new Message("Password changed successfully.", "success"));
+			session.setAttribute("message", new Message("Password changed successfully.", "alert-success"));
 		} else {
 			// error
-			session.setAttribute("message", new Message("Current password is incorrect. Please try again.", "danger"));
+			session.setAttribute("message", new Message("Current password is incorrect. Please try again.", "alert-danger"));
 			return "redirect:/user/settings";
 		}
 
@@ -307,7 +307,7 @@ public class UserController {
 			return "login";
 		} catch (Exception e) {
 			e.printStackTrace();
-			session.setAttribute("message", new Message("Error occurred while deleting account.", "danger"));
+			session.setAttribute("message", new Message("Error occurred while deleting account.", "alert-danger"));
 			return "redirect:/user/settings";
 		}
 	}
@@ -339,7 +339,7 @@ public class UserController {
 		feedbackRepository.save(feedback);
 
 		// success message
-		session.setAttribute("message", new Message("Message sent successfully.", "success"));
+		session.setAttribute("message", new Message("Message sent successfully.", "alert-success"));
 
 		// return "normal/feedback";
 		return "redirect:/user/dashboard";

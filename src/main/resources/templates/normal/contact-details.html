@@ -14,8 +14,8 @@
 
 				<div class="card-header d-flex justify-content-center align-items-center gap-3"
 					style="background-image: linear-gradient(90deg, rgb(160, 222, 219), rgb(3, 165, 209));">
-					<img src="" th:src="@{'/image/'+${contact.imageURL}}" class="img-fluid rounded-circle mt-2"
-						style="width: 120px; height: 120px;" alt="" />
+					<img src="" th:src="@{'/image/'+${contact.imageURL}}" class="img-fluid rounded-circle mt-1"
+						style="width: 100px; height: 100px;" alt="" />
 
 					<h1 class="text-white text-center fw-bold font-monospace" th:text="${contact.name}"></h1>
 				</div>
@@ -64,7 +64,7 @@
 						</div>
 					</div>
 					<div class="row mb-2">
-						<span th:text="${contact.description}"></span>
+						<span class="font-monospace fw-bolder fst-italic" th:text="${contact.description}"></span>
 					</div>
 
 
