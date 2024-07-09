@@ -16,24 +16,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class MyConfig {
-	// @Bean
-	// public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-	// 	http
-	// 			.authorizeRequests(authorizeRequests -> authorizeRequests
-	// 					.requestMatchers("/admin/**").hasRole("ADMIN")
-	// 					.requestMatchers("/user/**").hasRole("USER")
-	// 					.requestMatchers("/**").permitAll())
-	// 			.formLogin(loginConfigurer -> loginConfigurer
-	// 					.loginPage("/login")
-	// 					.loginProcessingUrl("/dologin")
-	// 					.defaultSuccessUrl("/user/dashboard"))
-	// 			.logout(logout -> logout
-	// 					.logoutUrl("/logout")
-	// 					.logoutSuccessUrl("/")
-	// 					.invalidateHttpSession(true))
-	// 			.csrf().disable();
-	// 	return http.build();
-	// }
+
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
@@ -49,9 +32,29 @@ public class MyConfig {
 						.logoutUrl("/logout")
 						.logoutSuccessUrl("/")
 						.invalidateHttpSession(true))
-				.csrf().disable();
+				.csrf(csrf -> csrf.disable());
 		return http.build();
 	}
+
+	// @Bean
+	// public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	// http
+	// .authorizeRequests(authorizeRequests -> authorizeRequests
+	// .requestMatchers("/admin/**").hasRole("ADMIN")
+	// .requestMatchers("/user/**").hasRole("USER")
+	// .requestMatchers("/**").permitAll())
+	// .formLogin(loginConfigurer -> loginConfigurer
+	// .loginPage("/login")
+	// .loginProcessingUrl("/dologin")
+	// .defaultSuccessUrl("/user/dashboard"))
+	// .logout(logout -> logout
+	// .logoutUrl("/logout")
+	// .logoutSuccessUrl("/")
+	// .invalidateHttpSession(true))
+	// .csrf().disable();
+	// return http.build();
+	// }
+
 	// http.csrf().disable().authorizeHttpRequests()
 	// .requestMatchers("/admin/**").hasRole("ADMIN")
 	// .requestMatchers("/user/**").hasRole("USER")
